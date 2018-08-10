@@ -7,6 +7,9 @@ body {
 a {
 	text-decoration: none;
 }
+h1 {
+	font-size: 40px;
+}
 .padding {
 	padding: 20px; 
 }
@@ -142,6 +145,20 @@ textarea {
 	margin: 0 auto;
 	float: none;
 }
+.thumbnail {
+	width: 100%;
+	padding: 5px;
+	border: 1px solid #eaeaea;
+}
+.small-image {
+	max-width: 200px;
+}
+.border-top {
+	border-top: 1px solid #eaeaea;
+}
+.border-bottom {
+	border-bottom: 1px solid #eaeaea;
+}
 
 
 /* Header (with nav) */
@@ -253,6 +270,18 @@ nav .current {
 }
 .num-answers {
 	font-size: 20px;
+}
+
+
+/* Profile */
+.profile-intro {
+	min-height: 200px;
+}
+.profile-intro img {
+	float: left;
+}
+.user-profile li {
+	margin-bottom: 20px; 
 }
 
 
