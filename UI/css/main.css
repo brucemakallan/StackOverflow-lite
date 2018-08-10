@@ -101,6 +101,19 @@ textarea {
 	background-color: white;
 	color: #333388;
 }
+.circle-link-red, .circle-link-green {
+	border-radius: 5px;
+	padding: 2px 5px;
+	margin-left: 10px;
+}
+.circle-link-red {
+	border: 1px solid red;
+	color: red;
+}
+.circle-link-green {
+	border: 1px solid #009900;
+	color: #009900;
+}
 .block {
 	width: 97%;
 }
