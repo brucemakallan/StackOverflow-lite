@@ -134,6 +134,9 @@ textarea {
 .icon-small {
 	width: 20px;
 }
+.icon-smallest {
+	width: 15px;
+}
 .grey-bg {
 	background-color: #eaeaea;
 }
