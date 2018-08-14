@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block current_profile %}class="current"{% endblock %}
+
+{% block maincontent %}
+	<section class="user-profile main-content spacing-large">
+		<div class="vessel">
+			<div class="section-heading">User Profile</div>
+
+			<div class="profile-intro">
+				<img src="{{ url_for('static', filename='img/anon.png') }}" class="thumbnail small-image margin-r">
+				<h1 class="margin-0">Jane Doe</h1>
+				<h2>12 Questions Asked</h2>
+				<h2>41 Answers Given</h2>
+			</div>
+
+			<div class="border-top">
+				<h3>List of Questions with the most Answers by <u>Jane Doe</u></h3>
+				<ol type="1">
+					<li>
+						<a href="{{ url_for('question') }}" class="question-small">Muffin powder jujubes donut dragée brownie. Sweet roll halvah cheesecake gingerbread gingerbread cookie sesame snaps toffee?</a>
+						<br><i class="margin-r">22 Answers</i> <img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest" /> <i>12th August 2018</i>
+					</li>
+					<li>
+						<a href="{{ url_for('question') }}" class="question-small">Chowder jujubes donut dragée brownie. Sweet roll halvah cheesecake gingerbread gingerbread cookie sesame snaps toffee?</a>
+						<br><i class="margin-r">21 Answers</i> <img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest" /> <i>11th August 2018</i>
+					</li>
+					<li>
+						<a href="{{ url_for('question') }}" class="question-small">Donut dragée brownie. Sweet Muffin powder jujubes roll halvah gingerbread gingerbread cookie sesame snaps toffee?</a>
+						<br><i class="margin-r">20 Answers</i> <img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest" /> <i>4th August 2018</i>
+					</li>
+					<li>
+						<a href="{{ url_for('question') }}" class="question-small">Roll halvah Muffin powder jujubes donut dragée brownie. Sweet cheesecake gingerbread gingerbread cookie sesame snaps toffee?</a>
+						<br><i class="margin-r">19 Answers</i> <img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest" /> <i>12th August 2018</i>
+					</li>
+					<li>
+						<a href="{{ url_for('question') }}" class="question-small">Muffin powder jujubes donut dragée brownie. Sweet roll halvah cheesecake gingerbread gingerbread cookie sesame snaps toffee?</a>
+						<br><i class="margin-r">18 Answers</i> <img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest" /> <i>9th August 2018</i>
+					</li>
+					<li>
+						<a href="{{ url_for('question') }}" class="question-small">Chowder jujubes donut dragée brownie. Sweet roll halvah cheesecake gingerbread gingerbread cookie sesame snaps toffee?</a>
+						<br><i class="margin-r">18 Answers</i> <img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest" /> <i>14th August 2018</i>
+					</li>
+					<li>
+						<a href="{{ url_for('question') }}" class="question-small">Donut dragée brownie. Sweet Muffin powder jujubes roll halvah gingerbread gingerbread cookie sesame snaps toffee?</a>
+						<br><i class="margin-r">18 Answers</i> <img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest" /> <i>15th August 2018</i>
+					</li>
+					<li>
+						<a href="{{ url_for('question') }}" class="question-small">Roll halvah Muffin powder jujubes donut dragée brownie. Sweet cheesecake gingerbread gingerbread cookie sesame snaps toffee?</a>
+						<br><i class="margin-r">16 Answers</i> <img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest" /> <i>7th August 2018</i>
+					</li>
+					<li>
+						<a href="{{ url_for('question') }}" class="question-small">Chowder jujubes donut dragée brownie. Sweet roll halvah cheesecake gingerbread gingerbread cookie sesame snaps toffee?</a>
+						<br><i class="margin-r">15 Answers</i> <img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest" /> <i>12th August 2018</i>
+					</li>
+					<li>
+						<a href="{{ url_for('question') }}" class="question-small">Donut dragée brownie. Sweet Muffin powder jujubes roll halvah gingerbread gingerbread cookie sesame snaps toffee?</a>
+						<br><i class="margin-r">10 Answers</i> <img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest" /> <i>14th August 2018</i>
+					</li>
+				</ol>
+			</div>
+
+			<div class="border-top">
+				<h3>List of Recent Questions by <u>Jane Doe</u></h3>
+				<ol type="1">
+					<li>
+						<a href="{{ url_for('question') }}" class="question-small">Muffin powder jujubes donut dragée brownie. Sweet roll halvah cheesecake gingerbread gingerbread cookie sesame snaps toffee?</a>
+						<br><img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest" /> <i>12th August 2018</i>
+					</li>
+					<li>
+						<a href="{{ url_for('question') }}" class="question-small">Chowder jujubes donut dragée brownie. Sweet roll halvah cheesecake gingerbread gingerbread cookie sesame snaps toffee?</a>
+						<br><img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest" /> <i>12th August 2018</i>
+					</li>
+					<li>
+						<a href="{{ url_for('question') }}" class="question-small">Donut dragée brownie. Sweet Muffin powder jujubes roll halvah gingerbread gingerbread cookie sesame snaps toffee?</a>
+						<br><img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest" /> <i>11th August 2018</i>
+					</li>
+					<li>
+						<a href="{{ url_for('question') }}" class="question-small">Roll halvah Muffin powder jujubes donut dragée brownie. Sweet cheesecake gingerbread gingerbread cookie sesame snaps toffee?</a>
+						<br><img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest" /> <i>10th August 2018</i>
+					</li>
+					<li>
+						<a href="{{ url_for('question') }}" class="question-small">Muffin powder jujubes donut dragée brownie. Sweet roll halvah cheesecake gingerbread gingerbread cookie sesame snaps toffee?</a>
+						<br><img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest" /> <i>4th August 2018</i>
+					</li>
+					<li>
+						<a href="{{ url_for('question') }}" class="question-small">Chowder jujubes donut dragée brownie. Sweet roll halvah cheesecake gingerbread gingerbread cookie sesame snaps toffee?</a>
+						<br><img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest" /> <i>4th August 2018</i>
+					</li>
+					<li>
+						<a href="{{ url_for('question') }}" class="question-small">Donut dragée brownie. Sweet Muffin powder jujubes roll halvah gingerbread gingerbread cookie sesame snaps toffee?</a>
+						<br><img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest" /> <i>4th August 2018</i>
+					</li>
+					<li>
+						<a href="{{ url_for('question') }}" class="question-small">Roll halvah Muffin powder jujubes donut dragée brownie. Sweet cheesecake gingerbread gingerbread cookie sesame snaps toffee?</a>
+						<br><img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest" /> <i>3rd August 2018</i>
+					</li>
+					<li>
+						<a href="{{ url_for('question') }}" class="question-small">Roll halvah Muffin powder jujubes donut dragée brownie. Sweet cheesecake gingerbread gingerbread cookie sesame snaps toffee?</a>
+						<br><img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest" /> <i>1st August 2018</i>
+					</li>
+					<li>
+						<a href="{{ url_for('question') }}" class="question-small">Muffin powder jujubes donut dragée brownie. Sweet roll halvah cheesecake gingerbread gingerbread cookie sesame snaps toffee?</a>
+						<br><img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest" /> <i>1st August 2018</i>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</section>
+{% endblock %}

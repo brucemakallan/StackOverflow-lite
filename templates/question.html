@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block maincontent %}
+	<section class="main-content spacing-large">
+		<div class="vessel">
+			<div class="section-heading">&bull; Sample Clicked Question: Cake donut topping halvah candy canes candy toffee jelly-o. Fruitcake carrot cake brownie lollipop powder?</div>
+
+			<div class="date"><img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest" /> <i>12th August 2018</i></div>
+
+			<div class="question-entry">
+				<h3 class="margin-0">Answers (3)</h3>
+
+				<!-- answer 1 -->
+				<div class="answer-entry">
+					<div class="answer">Powder dessert cake. Gummies sugar plum tart chupa chups lemon drops. Cheesecake dragée biscuit marzipan.</div>
+					<div class="options margin-t">
+						<a href="#"><img class="icon-small margin-r" src="{{ url_for('static', filename='img/thumbs-up.png') }}" alt="Up-vote" title="Up-vote"></a>
+						<a href="#"><img class="icon-small margin-r" src="{{ url_for('static', filename='img/thumbs-down.png') }}" alt="Down-vote" title="Down-vote"></a>
+						<span class="votes">11 Votes</span>
+						<img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest margin-l" /> <i>12th August 2018</i>
+					</div>
+				</div>
+
+				<!-- answer 2 -->
+				<div class="answer-entry">
+					<div class="answer">Fruitcake sugar plum pudding cake lollipop chocolate bar dragée candy. Fruitcake wafer pie. Sesame snaps chupa chups jelly beans lemon drops lemon drops cake bonbon cookie. Lemon drops topping cake gummies gummies pastry caramels icing.</div>
+					<div class="options margin-t">
+						<a href="#"><img class="icon-small margin-r" src="{{ url_for('static', filename='img/thumbs-up.png') }}" alt="Up-vote" title="Up-vote"></a>
+						<a href="#"><img class="icon-small margin-r" src="{{ url_for('static', filename='img/thumbs-down.png') }}" alt="Down-vote" title="Down-vote"></a>
+						<span class="votes">5 Votes</span>
+						<img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest margin-l" /> <i>19th August 2018</i>
+					</div>
+				</div>
+
+				<!-- answer -->
+				<div class="answer-entry">
+					<div class="answer">Deliver dessert cake. Gummies sugar plum tart chupa chups lemon drops. Cheesecake dragée biscuit marzipan.</div>
+					<div class="options margin-t">
+						<a href="#"><img class="icon-small margin-r" src="{{ url_for('static', filename='img/thumbs-up.png') }}" alt="Up-vote" title="Up-vote"></a>
+						<a href="#"><img class="icon-small margin-r" src="{{ url_for('static', filename='img/thumbs-down.png') }}" alt="Down-vote" title="Down-vote"></a>
+						<span class="votes">2 Votes</span>
+						<img src="{{ url_for('static', filename='img/clock.png') }}" class="icon-smallest margin-l" /> <i>17th August 2018</i>
+					</div>
+				</div>
+
+				<div>
+					<form method="post" action="">
+						<textarea class="tx_answer" name="tx_answer" placeholder="Type your answer here"></textarea><br>
+						<input type="submit" name="bt_post" value="Post Answer">
+					</form>
+				</div>
+			</div>
+
+			<a href="{{ url_for('questions') }}">&lt; Back to Questions</a>
+		</div>
+	</section>
+{% endblock %}
