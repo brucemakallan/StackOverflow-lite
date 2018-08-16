@@ -1,6 +1,9 @@
-from flask import Flask, render_template, jsonify
+import datetime
+
+from flask import Flask, render_template, jsonify, request
 
 from data import RawData
+from question import Question
 
 app = Flask(__name__)
 
@@ -30,31 +33,35 @@ def signup():
     return render_template('signup.html', title='Signup')
 
 
+# get all questions
 @app.route("/api/v1/questions", methods=['GET'])
 def api_questions():
-    # turn question objects into dictionaries and store in one list
-    all_questions = []
-    for question_obj in RawData().questions:
-        question_dict = dict()
-        question_dict['id'] = question_obj.id
-        question_dict['details'] = question_obj.details
-        question_dict['date_posted'] = question_obj.date_posted
-        all_questions.append(question_dict)
+    # turn question objects (from data file) into dictionaries and store in one list
+    all_questions = [question_obj.obj_to_dict() for question_obj in RawData().questions]
     return jsonify(all_questions)
 
 
+# get specific question
 @app.route("/api/v1/questions/<int:questionId>", methods=['GET'])
 def api_quesiton(questionId):
     question_selected = []
     for question_obj in RawData().questions:
         if question_obj.id == questionId:
-            question_dict = dict()
-            question_dict['id'] = question_obj.id
-            question_dict['details'] = question_obj.details
-            question_dict['date_posted'] = question_obj.date_posted
-            question_selected.append(question_dict)
+            question_selected.append(question_obj.obj_to_dict())
             break
     return jsonify(question_selected)
+
+
+# add a question
+@app.route("/api/v1/questions", methods=['POST'])
+def api_add_question():
+    input_data = request.get_json(force=True)
+    details = input_data['details']
+    date_posted = datetime.datetime.now()
+    id = RawData().questions[-1].id + 1
+    new_question = Question(id, details, date_posted)
+    RawData().questions.append(new_question)
+    return jsonify(new_question.obj_to_dict())
 
 
 if __name__ == '__main__':
