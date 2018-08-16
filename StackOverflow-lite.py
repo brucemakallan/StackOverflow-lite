@@ -43,5 +43,19 @@ def api_questions():
     return jsonify(all_questions)
 
 
+@app.route("/api/v1/questions/<int:questionId>", methods=['GET'])
+def api_quesiton(questionId):
+    question_selected = []
+    for question_obj in RawData().questions:
+        if question_obj.id == questionId:
+            question_dict = dict()
+            question_dict['id'] = question_obj.id
+            question_dict['details'] = question_obj.details
+            question_dict['date_posted'] = question_obj.date_posted
+            question_selected.append(question_dict)
+            break
+    return jsonify(question_selected)
+
+
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
