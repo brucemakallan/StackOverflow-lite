@@ -1,0 +1,9 @@
+{
+  "tests/test_endpoints.py::EndpointsTestCase::test_get_all_answers": true,
+  "tests/test_endpoints.py::EndpointsTestCase::test_get_all_questions": true,
+  "tests/test_endpoints.py::EndpointsTestCase::test_get_one_question": true,
+  "tests/test_endpoints.py::EndpointsTestCase::test_post_answer": true,
+  "tests/test_endpoints.py::EndpointsTestCase::test_post_question": true,
+  "tests/test_endpoints.py::TestEndpoints::()::test_get_questions": true,
+  "tests/test_endpoints.py::TestEndpoints::test_get_all_questions": true
+}
