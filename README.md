@@ -5,6 +5,7 @@ UI URL:
 https://brucemakallan.github.io/StackOverflow-lite/UI/
 
 Travis CI [![Build Status](https://travis-ci.com/brucemakallan/StackOverflow-lite.svg?branch=master)](https://travis-ci.com/brucemakallan/StackOverflow-lite)
+Coveralls [![Coverage Status](https://coveralls.io/repos/github/brucemakallan/StackOverflow-lite/badge.svg?branch=master)](https://coveralls.io/github/brucemakallan/StackOverflow-lite?branch=master)
 
 ## Main Features
 1. Users can create an account and log in.
