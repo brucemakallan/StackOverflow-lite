@@ -1,7 +1,7 @@
 import datetime
 
-from question import Question
-from answer import Answer
+from app.question import Question
+from app.answer import Answer
 
 
 class RawData:

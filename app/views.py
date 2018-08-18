@@ -1,12 +1,13 @@
 import datetime
 
-from flask import Flask, render_template, jsonify, request, make_response, current_app
+from flask import render_template, jsonify, request, make_response, Flask
 
-from answer import Answer
-from data import RawData
-from question import Question
+from app import create_app
+from app.answer import Answer
+from app.data import RawData
+from app.question import Question
 
-app = Flask(__name__)
+app = create_app(config_name='development')
 
 
 @app.route("/")
@@ -102,7 +103,3 @@ def custom_response(status_code, status_message, friendly_message):
         status_code)
     response.headers['Status-Code'] = str(status_code) + ': ' + status_message + ', ' + friendly_message
     return response
-
-
-if __name__ == '__main__':
-    app.run(debug=True)

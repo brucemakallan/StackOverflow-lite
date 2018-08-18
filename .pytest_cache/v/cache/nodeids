@@ -1,6 +1,6 @@
 [
-  "tests/test_endpoints.py::EndpointsTestCase::test_get_all_questions",
-  "tests/test_endpoints.py::EndpointsTestCase::test_get_one_question",
-  "tests/test_endpoints.py::EndpointsTestCase::test_post_answer",
-  "tests/test_endpoints.py::EndpointsTestCase::test_post_question"
+  "app/tests/test_endpoints.py::EndpointsTestCase::test_get_all_questions",
+  "app/tests/test_endpoints.py::EndpointsTestCase::test_get_one_question",
+  "app/tests/test_endpoints.py::EndpointsTestCase::test_post_answer",
+  "app/tests/test_endpoints.py::EndpointsTestCase::test_post_question"
 ]
