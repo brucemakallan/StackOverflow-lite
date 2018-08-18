@@ -4,6 +4,8 @@ StackOverflow-lite is a platform where people can ask questions and provide answ
 UI URL:
 https://brucemakallan.github.io/StackOverflow-lite/UI/
 
+[![Build Status](https://travis-ci.com/brucemakallan/StackOverflow-lite.svg?branch=master)](https://travis-ci.com/brucemakallan/StackOverflow-lite)
+
 ## Main Features
 1. Users can create an account and log in.
 2. Users can post questions.
