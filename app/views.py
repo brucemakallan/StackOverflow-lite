@@ -1,38 +1,14 @@
 import datetime
 
-from flask import render_template, jsonify, request, make_response, Flask
+from flask import render_template, jsonify, request, make_response
 
 from app import create_app
 from app.answer import Answer
 from app.data import RawData
 from app.question import Question
 
-app = create_app(config_name='development')
 
-
-@app.route("/")
-def home():
-    return render_template('index.html', title='Home')
-
-
-@app.route("/profile")
-def profile():
-    return render_template('profile.html', title='Profile')
-
-
-@app.route("/question")
-def question():
-    return render_template('question.html', title='Question')
-
-
-@app.route("/questions")
-def questions():
-    return render_template('questions.html', title='Questions')
-
-
-@app.route("/signup")
-def signup():
-    return render_template('signup.html', title='Signup')
+app = create_app()
 
 
 # get all questions
@@ -62,12 +38,12 @@ def api_quesiton(question_id):
 @app.route("/api/v1/questions", methods=['POST'])
 def api_add_question():
     input_data = request.get_json(force=True)
-    if 'details' not in input_data.keys():
-        return custom_response(400, 'Bad Request', "Request must contain 'details' data")
-    details = input_data['details']
+    if 'question' not in input_data.keys():
+        return custom_response(400, 'Bad Request', "Request must contain 'question' data")
+    question = input_data['question']
     date_posted = datetime.datetime.now()
     id = RawData().questions[-1].id + 1
-    new_question = Question(id, details, date_posted)
+    new_question = Question(id, question, date_posted)
     RawData().questions.append(new_question)
     return jsonify(new_question.obj_to_dict()), 201
 
@@ -86,13 +62,13 @@ def api_answers(question_id):
 @app.route("/api/v1/questions/<int:question_id>/answers", methods=['POST'])
 def api_add_answer(question_id):
     input_data = request.get_json(force=True)
-    if 'details' not in input_data.keys() or 'votes' not in input_data.keys():
-        return custom_response(400, 'Bad Request', "Request must contain both 'details' and 'votes' data")
-    details = input_data['details']
+    if 'answer' not in input_data.keys() or 'votes' not in input_data.keys():
+        return custom_response(400, 'Bad Request', "Request must contain both 'answer' and 'votes' data")
+    answer = input_data['answer']
     votes = input_data['votes']
     date_posted = datetime.datetime.now()
     id = RawData().answers[-1].id + 1
-    new_answer = Answer(id, question_id, votes, details, date_posted)
+    new_answer = Answer(id, question_id, votes, answer, date_posted)
     RawData().answers.append(new_answer)
     return jsonify(new_answer.obj_to_dict()), 201
 

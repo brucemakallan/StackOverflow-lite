@@ -4,6 +4,7 @@ StackOverflow-lite is a platform where people can ask questions and provide answ
 UI URL:
 https://brucemakallan.github.io/StackOverflow-lite/UI/
 
+
 Travis CI [![Build Status](https://travis-ci.com/brucemakallan/StackOverflow-lite.svg?branch=master)](https://travis-ci.com/brucemakallan/StackOverflow-lite)
 Coveralls [![Coverage Status](https://coveralls.io/repos/github/brucemakallan/StackOverflow-lite/badge.svg?branch=master)](https://coveralls.io/github/brucemakallan/StackOverflow-lite?branch=master)
 
@@ -14,3 +15,16 @@ Coveralls [![Coverage Status](https://coveralls.io/repos/github/brucemakallan/St
 4. Users can post answers.
 5. Users can view the answers to questions.
 6. Users can accept an answer out of all the answers to his/her question as the preferred answer.
+
+## API Endpoints
+GET /api/v1/questions
+Fetch all questions
+
+GET /api/v1/questions/<questionId>
+Fetch a specific question
+
+POST /api/v1/questions
+Add a question
+
+POST /api/v1/questions/<questionId>/answers
+Add an answer

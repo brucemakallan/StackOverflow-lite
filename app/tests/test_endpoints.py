@@ -10,11 +10,11 @@ class EndpointsTestCase(unittest.TestCase):
     def setUp(self):
         self.client = app.test_client(self)
         self.test_data_question = dict(
-            details='What is a variable'
+            question='What is a variable'
         )
         self.test_data_answer = {
             "date_posted": "Fri, 03 Aug 2018 00:00:00 GMT",
-            "details": "A storage construct whose value can change",
+            "answer": "A storage construct whose value can change",
             "id": 1,
             "question_id": 1,
             "votes": 12
