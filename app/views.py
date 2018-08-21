@@ -62,13 +62,12 @@ def api_answers(question_id):
 @app.route("/api/v1/questions/<int:question_id>/answers", methods=['POST'])
 def api_add_answer(question_id):
     input_data = request.get_json(force=True)
-    if 'answer' not in input_data.keys() or 'votes' not in input_data.keys():
-        return custom_response(400, 'Bad Request', "Request must contain both 'answer' and 'votes' data")
+    if 'answer' not in input_data.keys():
+        return custom_response(400, 'Bad Request', "Request must contain 'answer' data")
     answer = input_data['answer']
-    votes = input_data['votes']
     date_posted = datetime.datetime.now()
     id = RawData().answers[-1].id + 1
-    new_answer = Answer(id, question_id, votes, answer, date_posted)
+    new_answer = Answer(id, question_id, answer, date_posted)
     RawData().answers.append(new_answer)
     return jsonify(new_answer.obj_to_dict()), 201
 
