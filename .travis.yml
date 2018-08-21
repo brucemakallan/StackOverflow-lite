@@ -5,6 +5,6 @@ cache: pip
 install:
   - pip install -r requirements.txt
 script:
-  - python python tests.py
+  - python tests.py
 after_success:
   - coveralls
