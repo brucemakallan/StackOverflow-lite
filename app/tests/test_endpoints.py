@@ -16,8 +16,7 @@ class EndpointsTestCase(unittest.TestCase):
             "date_posted": "Fri, 03 Aug 2018 00:00:00 GMT",
             "answer": "A storage construct whose value can change",
             "id": 1,
-            "question_id": 1,
-            "votes": 12
+            "question_id": 1
         }
 
     # test for endpoints. Run using $pytest

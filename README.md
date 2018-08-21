@@ -17,14 +17,47 @@ Coveralls [![Coverage Status](https://coveralls.io/repos/github/brucemakallan/St
 6. Users can accept an answer out of all the answers to his/her question as the preferred answer.
 
 ## API Endpoints
+The API is hosted on Heroku at:
+```
+https://stackoverflow-lite-abm.herokuapp.com
+```
+
+### Fetch all questions:
+```
 GET /api/v1/questions
-Fetch all questions
+```
+For example: https://stackoverflow-lite-abm.herokuapp.com/api/v1/questions
 
+### Fetch a specific question
+```
 GET /api/v1/questions/<questionId>
-Fetch a specific question
+```
+For example: https://stackoverflow-lite-abm.herokuapp.com/api/v1/questions/1
 
+### Add a question
+```
 POST /api/v1/questions
-Add a question
+```
+Provide POST data in JSON format e.g.
+```
+{
+    "question": "Sample text"
+}
+```
 
+### Get all answers for a specific question
+```
+GET /api/v1/questions/<questionId>/answers
+```
+For example: https://stackoverflow-lite-abm.herokuapp.com/api/v1/questions/1/answers
+
+### Add an answer
+```
 POST /api/v1/questions/<questionId>/answers
-Add an answer
+```
+Provide POST data in JSON format e.g.
+```
+{
+    "answer": "Sample text"
+}
+```
