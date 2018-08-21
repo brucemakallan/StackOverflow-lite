@@ -66,11 +66,15 @@ section {
 .al-center {
 	text-align: center;
 }
-input[type="submit"] {
+.submit-bt {
 	padding: 10px 25px; 
 	border: none;
 	background-color: #9898ff;
 	color: white;
+}
+.submit-bt a {
+	color: white;
+	text-decoration: none;
 }
 input[type="email"], input[type="password"], input[type="text"] {
 	margin: 0 0 10px 0;
