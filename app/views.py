@@ -1,6 +1,6 @@
 import datetime
 
-from flask import render_template, jsonify, request, make_response
+from flask import jsonify, request, make_response
 
 from app import create_app
 from app.answer import Answer
@@ -41,10 +41,14 @@ def api_add_question():
     if 'question' not in input_data.keys():
         return custom_response(400, 'Bad Request', "Request must contain 'question' data")
     question = input_data['question']
+    all_questions = RawData().questions
+    for qn in all_questions:
+        if qn.question.strip().lower() == question.strip().lower():  # check if question already exists
+            return custom_response(409, 'Conflict', "Duplicate Value")
     date_posted = datetime.datetime.now()
     id = RawData().questions[-1].id + 1
     new_question = Question(id, question, date_posted)
-    RawData().questions.append(new_question)
+    all_questions.append(new_question)
     return jsonify(new_question.obj_to_dict()), 201
 
 
@@ -65,10 +69,14 @@ def api_add_answer(question_id):
     if 'answer' not in input_data.keys():
         return custom_response(400, 'Bad Request', "Request must contain 'answer' data")
     answer = input_data['answer']
+    all_answers = RawData().answers
+    for ans in all_answers:
+        if ans.answer.strip().lower() == answer.strip().lower():  # check if value already exists
+            return custom_response(409, 'Conflict', "Duplicate Value")
     date_posted = datetime.datetime.now()
     id = RawData().answers[-1].id + 1
     new_answer = Answer(id, question_id, answer, date_posted)
-    RawData().answers.append(new_answer)
+    all_answers.append(new_answer)
     return jsonify(new_answer.obj_to_dict()), 201
 
 
