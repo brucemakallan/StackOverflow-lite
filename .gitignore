@@ -1,6 +1,6 @@
-.idea
+.idea/
 .pytest_cache
-__pycache__
-app/__pycache__
-app/tests/__pycache__
-virtual_env
+__pycache__/
+app/__pycache__/
+app/tests/__pycache__/
+virtual_env/
