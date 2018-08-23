@@ -11,9 +11,10 @@ from app.question import Question
 app = create_app()
 
 
-# get all questions
 @app.route("/api/v1/questions", methods=['GET'])
 def api_questions():
+    """Get all questions"""
+
     # turn question objects (from data file) into dictionaries and store in one list
     all_questions = [question_obj.obj_to_dict() for question_obj in RawData().questions]
     if len(all_questions) == 0:
@@ -21,9 +22,10 @@ def api_questions():
     return jsonify(all_questions), 200
 
 
-# get specific question
 @app.route("/api/v1/questions/<int:question_id>", methods=['GET'])
 def api_quesiton(question_id):
+    """Get a specific question using its id"""
+
     question_selected = []
     for question_obj in RawData().questions:
         if question_obj.id == question_id:
@@ -34,9 +36,10 @@ def api_quesiton(question_id):
     return jsonify(question_selected), 200
 
 
-# add a question
 @app.route("/api/v1/questions", methods=['POST'])
 def api_add_question():
+    """Post / Add a new question"""
+
     input_data = request.get_json(force=True)
     if 'question' not in input_data.keys():
         return custom_response(400, 'Bad Request', "Request must contain 'question' data")
@@ -52,9 +55,10 @@ def api_add_question():
     return jsonify(new_question.obj_to_dict()), 201
 
 
-# get all answers
 @app.route("/api/v1/questions/<int:question_id>/answers", methods=['GET'])
 def api_answers(question_id):
+    """Get all answers to a specific question"""
+
     # turn answer objects (from data file) into dictionaries and store in one list
     all_answers = [answer_obj.obj_to_dict() for answer_obj in RawData().answers if answer_obj.question_id == question_id]
     if len(all_answers) == 0:
@@ -62,9 +66,10 @@ def api_answers(question_id):
     return jsonify(all_answers), 200
 
 
-# add an answer to a specific question
 @app.route("/api/v1/questions/<int:question_id>/answers", methods=['POST'])
 def api_add_answer(question_id):
+    """Add an answer to a specific question"""
+
     input_data = request.get_json(force=True)
     if 'answer' not in input_data.keys():
         return custom_response(400, 'Bad Request', "Request must contain 'answer' data")
@@ -81,6 +86,8 @@ def api_add_answer(question_id):
 
 
 def custom_response(status_code, status_message, friendly_message):
+    """Return a response with Status Code, its corresponding message, and a friendly message"""
+
     response = make_response(
         jsonify({'status_code': str(status_code) + ': ' + status_message + ', ' + friendly_message}),
         status_code)
